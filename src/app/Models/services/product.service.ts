@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from '../interfaces/Iproduct';
 import { map, Observable } from 'rxjs';
+import { environment } from '../../Env/Enviroment';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
+  private base = `${environment.apiUrl}/Product/`;
   deleteProduct(id: number) {
     return this.http.delete(`${this.base}DeleteProduct/${id}`);
   }
@@ -16,7 +18,7 @@ export class ProductService {
 }
 
 
-  private base = (window as any).__env?.API_URL || 'https://mecommerce.runasp.net/api/Product/';
+  
 
   constructor(private http: HttpClient) {}
  createProduct(productData: FormData): Observable<any> {

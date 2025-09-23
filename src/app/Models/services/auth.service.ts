@@ -2,20 +2,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../Env/Enviroment';
+import { AuthResponse } from '../interfaces/auth-response';
 
-interface AuthResponse {
-  result: {
-    accessToken: string;
-    refreshToken: string;
-    expiration: string;
-  };
-  statusCode: number;
-  message: string;
-}
+
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'https://mecommerce.runasp.net/api/Account';
+  private baseUrl = `${environment.apiUrl}/Account`;
 
   constructor(private http: HttpClient) {}
 
