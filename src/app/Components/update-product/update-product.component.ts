@@ -10,6 +10,7 @@ import { ProductService } from '../../Models/services/product.service';
   standalone: true,
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './update-product.component.html',
+  styleUrls: ['./update-product.component.css'],
 })
 export class UpdateProductComponent implements OnInit {
   form!: FormGroup;

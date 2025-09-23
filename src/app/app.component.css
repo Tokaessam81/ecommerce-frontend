@@ -1,0 +1,19 @@
+/* نخفي السكول بار للـ body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* يمنع ظهور السكول بار */
+  height: 100vh; /* مهم لتحديد ارتفاع الصفحة */
+}
+
+/* نخلي div الداخلي قابل للسكول بدون ظهور scrollbar */
+.scrollable {
+  height: 100vh; /* يماثل ارتفاع الشاشة */
+  overflow-y: auto; /* السكول عمودي فقط */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

@@ -1,8 +1,13 @@
 <nav class="navbar">
-  <div class="navbar-brand">MyApp</div>
+  <div class="navbar-brand">E-Commerce</div>
+
   <ul class="nav-links">
-    <li><a routerLink="/">Home</a></li>
-    <li *ngIf="!isLoggedIn()"><a routerLink="/login">Login</a></li>
-    <li *ngIf="isLoggedIn()"><a (click)="logout()" style="cursor:pointer">Logout</a></li>
+    <li><a routerLink="/products">Products</a></li>
+    <li><a routerLink="/add-product">Add Product</a></li>
   </ul>
+
+  <div class="nav-buttons">
+    <a *ngIf="!isLoggedIn()" routerLink="/login" class="btn login-btn">Login</a>
+    <a *ngIf="isLoggedIn()" (click)="logout()" class="btn logout-btn">Logout</a>
+  </div>
 </nav>

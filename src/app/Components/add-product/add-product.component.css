@@ -1,0 +1,80 @@
+form {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 10px 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.alert {
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: 500;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  border: none;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn-outline-dark {
+  border: 1px solid #374151;
+  color: #374151;
+  background-color: transparent;
+}
+
+.btn-outline-dark:hover {
+  background-color: #374151;
+  color: #fff;
+}

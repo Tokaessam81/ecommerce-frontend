@@ -1,30 +1,81 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #007bff;
+  align-items: center; /* كل شيء في منتصف الطول */
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #111827, #1f2937);
   color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-brand {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.navbar-brand:hover {
+  color: #60a5fa;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
-  color: white;
+  color: #e5e7eb;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 6px 14px;
+  border-radius: 6px;
 }
 
 .nav-links li a:hover {
-  color: #ffdd57;
+  background-color: #374151;
+  color: #fff;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center; /* يضمن أن الأزرار في المنتصف طولياً */
+}
+
+.btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn {
+  background-color: #3b82f6;
+  color: #fff;
+}
+.login-btn:hover {
+  background-color: #2563eb;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+.logout-btn:hover {
+  background-color: #dc2626;
 }

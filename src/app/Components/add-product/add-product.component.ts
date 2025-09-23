@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './add-product.component.html',
+    styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent {
   form: FormGroup;
