@@ -1,0 +1,8 @@
+<nav class="navbar">
+  <div class="navbar-brand">MyApp</div>
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngIf="!isLoggedIn()"><a routerLink="/login">Login</a></li>
+    <li *ngIf="isLoggedIn()"><a (click)="logout()" style="cursor:pointer">Logout</a></li>
+  </ul>
+</nav>

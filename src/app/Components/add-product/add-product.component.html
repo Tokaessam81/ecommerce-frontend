@@ -1,0 +1,52 @@
+<form [formGroup]="form" (ngSubmit)="submit()" enctype="multipart/form-data" novalidate class="p-4 border rounded shadow-sm">
+  <div class="mb-3">
+    <label class="form-label">Name*</label>
+    <input formControlName="Name" type="text" class="form-control" />
+    <div *ngIf="form.get('Name')?.invalid && form.get('Name')?.touched" class="text-danger">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Category*</label>
+    <input formControlName="Category" type="text" class="form-control" />
+    <div *ngIf="form.get('Category')?.invalid && form.get('Category')?.touched" class="text-danger">
+      Category is required.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Product Code*</label>
+    <input formControlName="ProductCode" type="text" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Price*</label>
+    <input formControlName="Price" type="number" min="0" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Minimum Quantity*</label>
+    <input formControlName="MinimumQuantity" type="number" min="1" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Discount Rate</label>
+    <input formControlName="DiscountRate" type="number" min="0" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Image*</label>
+    <input type="file" (change)="onFileChange($event)" class="form-control" />
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <div *ngIf="success" class="alert alert-success">{{ success }}</div>
+
+
+  <button type="submit" class="btn btn-primary me-2" [disabled]="loading">
+    {{ loading ? 'Adding...' : 'Add Product' }}
+  </button>
+  <button type="button" class="btn btn-secondary me-2" (click)="reset()">Reset</button>
+  <a routerLink="/products" class="btn btn-outline-dark">Back to Products</a>
+</form>

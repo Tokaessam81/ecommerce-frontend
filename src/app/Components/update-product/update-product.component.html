@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="submit()" enctype="multipart/form-data" novalidate 
+      class="p-4 border rounded shadow-sm bg-light">
+
+  <h3 class="text-center mb-4 fw-bold text-primary">Update Product</h3>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Name*</label>
+    <input formControlName="Name" type="text" class="form-control" placeholder="Enter product name" />
+    <div *ngIf="form.get('Name')?.invalid && form.get('Name')?.touched" class="text-danger small">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Category*</label>
+    <input formControlName="Category" type="text" class="form-control" placeholder="Enter category" />
+    <div *ngIf="form.get('Category')?.invalid && form.get('Category')?.touched" class="text-danger small">
+      Category is required.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Product Code*</label>
+    <input formControlName="ProductCode" type="text" class="form-control" placeholder="Enter product code" />
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-semibold">Price*</label>
+      <input formControlName="Price" type="number" min="0" class="form-control" placeholder="Enter price" />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-semibold">Minimum Quantity*</label>
+      <input formControlName="MinimumQuantity" type="number" min="1" class="form-control" placeholder="Enter min quantity" />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Discount Rate</label>
+    <input formControlName="DiscountRate" type="number" min="0" class="form-control" placeholder="Enter discount rate" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Image</label>
+    <input type="file" (change)="onFileChange($event)" class="form-control" accept="image/*" />
+    <div *ngIf="imagePreview" class="mt-2 text-center">
+      <img [src]="imagePreview" alt="Preview" class="img-thumbnail" style="max-width: 200px; max-height: 150px;" />
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <div *ngIf="success" class="alert alert-success">{{ success }}</div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <div>
+      <button type="submit" class="btn btn-primary me-2" [disabled]="loading">
+        {{ loading ? 'Updating...' : 'Update Product' }}
+      </button>
+      <button type="button" class="btn btn-secondary me-2" (click)="reset()">Reset</button>
+    </div>
+    <a routerLink="/products" class="btn btn-outline-dark">Back to Products</a>
+  </div>
+</form>

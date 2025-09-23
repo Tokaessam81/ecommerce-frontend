@@ -1,0 +1,9 @@
+<div class="p-4 border rounded shadow-sm text-center">
+  <h4>Are you sure you want to delete this product?</h4>
+  <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+  <div *ngIf="success" class="alert alert-success mt-3">{{ success }}</div>
+  <button class="btn btn-danger mt-3 me-2" (click)="deleteProduct()" [disabled]="loading">
+    {{ loading ? 'Deleting...' : 'Delete' }}
+  </button>
+  <a routerLink="/products" class="btn btn-secondary mt-3">Cancel</a>
+</div>
