@@ -19,7 +19,9 @@
         <p class="category">{{ p.category }}</p>
         <h5 class="title">{{ p.name }}</h5>
         <p class="price">EGP {{ p.price | number:'1.0-2' }}</p>
-
+        <button class="btn btn-success w-100 mb-2" (click)="addToCart(p)">
+          <i class="bi bi-cart-plus"></i> Add to Cart
+        </button>
         <a [routerLink]="['/update-product', p.id]" class="btn btn-outline-primary w-100 mb-2">
           <i class="bi bi-pencil-square"></i> Update
         </a>

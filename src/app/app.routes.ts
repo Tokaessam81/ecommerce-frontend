@@ -8,6 +8,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { AddProductComponent } from './Components/add-product/add-product.component';
 import { UpdateProductComponent } from './Components/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/delete-product/delete-product.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'add-product', component: AddProductComponent, canActivate: [authGuard] }
   ,{ path: 'update-product/:id', component: UpdateProductComponent, canActivate: [authGuard] }
-  ,{ path: 'delete-product/:id', component: DeleteProductComponent, canActivate: [authGuard] }
+  ,{ path: 'delete-product/:id', component: DeleteProductComponent, canActivate: [authGuard] },
+  { path: 'cart', component: CartComponent }
 ];

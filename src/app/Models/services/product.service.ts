@@ -16,10 +16,6 @@ export class ProductService {
     observe: 'events' 
   });
 }
-
-
-  
-
   constructor(private http: HttpClient) {}
  createProduct(productData: FormData): Observable<any> {
     return this.http.post(`${this.base}CreateProduct`, productData);

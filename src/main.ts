@@ -7,11 +7,15 @@ import { appConfig } from './app/app.config';
 import { JwtInterceptor } from '../src/app/Models/interceptors/jwt.interceptor.ts';
 import { AuthService } from '../src/app/Models/services/auth.service';
 
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+
 bootstrapApplication(AppComponent, {
   providers: [
     ...appConfig.providers,
-    importProvidersFrom(HttpClientModule, ReactiveFormsModule),
+    importProvidersFrom(ReactiveFormsModule),
     AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }, // تسجيل الـ interceptor
+    provideHttpClient(withInterceptorsFromDi()), // ✅ هنا بيتفعل الـ interceptors
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }, // ✅ هنا تسجيل الـ interceptor
   ]
 });
+
